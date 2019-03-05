@@ -15,6 +15,7 @@ public class Histogram extends Pane {
 		drawHistogram();
 	}
 
+	//Create the bar chart
 	public void drawHistogram() {
 		for (int i = 0, x = 0; i < counts.length; i++, x += 25) {
 			double rHeight = (double) counts[i] / maxValue * paneHeight;
@@ -32,12 +33,14 @@ public class Histogram extends Pane {
 		}
 	}
 
+	//Set the count of letters
 	public void setCounts(int[] counts) {
 		this.counts = counts;
 		maxValue = getMaxValue();
 		drawHistogram();
 	}
 
+	//Get the highest number in count
 	public int getMaxValue() {
 		int m = counts[0];
 		for (int i = 1; i < counts.length; i++) {

@@ -17,9 +17,12 @@ public class Question1 extends Application {
 	    pane.setHgap(5);
 	    
 	    for (int i = 0; i < 3; i++) {
+	    	//Choose a random number between 54 and 1
 	    	int cardChoosen = rn.nextInt(54) + 1;
+	    	//Create an image node according to the number chosen
 	    	String cardLocation = "Cards/" + cardChoosen + ".png";
 	    	ImageView imageView1 = new ImageView(cardLocation);
+	    	//Add the image node to pane
 	    	pane.add(imageView1, i, 0);
 	    }
 	    

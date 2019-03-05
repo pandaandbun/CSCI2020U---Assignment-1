@@ -19,6 +19,7 @@ public class Question4 extends Application {
 		HBox controlBox = new HBox(10);
 		BorderPane pane = new BorderPane();
 		
+		//Set bar chart
 		Histogram hist = new Histogram();
 		// Set text field
 		TextField textFilename = new TextField();
@@ -47,6 +48,7 @@ public class Question4 extends Application {
 		primaryStage.show(); // Display the stage
 	}
 
+	//Read Text File
 	private void readFile(TextField textFilename, Histogram hist) {
 		counts = new int[26];
 		File file = new File(textFilename.getText());
@@ -64,6 +66,7 @@ public class Question4 extends Application {
 		}
 	}
 
+	//Count the letters in text file
 	public static void countLetters(String s) {
 		for (int i = 0; i < s.length(); i++) {
 			char character = s.charAt(i);

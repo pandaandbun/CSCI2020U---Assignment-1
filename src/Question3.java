@@ -25,20 +25,21 @@ public class Question3 extends Application {
 		Pane pane = new Pane();
 		pane.setPadding(new Insets(25, 25, 25, 25));
 
-		//Create the Central Circle
+		//Create a Central Circle
 		Circle cir = setCircle();
 		pane.getChildren().add(cir);
 		
-		//Create random triangle points 
+		//Create three random triangle points 
 		setTrianglePoints(cir);
-		// Create Triangle
+		
+		// Create the Triangle according to the points
 		Polygon tri = setTriangle ();
 		pane.getChildren().add(tri);
 		
-		//Initialize the Angles of the Triangle
+		//Calculate the initial Angles of the Triangle
 		setTriangleAngles();
 		
-		// Set the small circles and Angles text
+		// Set three small red circles on top of each triangle points and label each point with its Angles
 		setSmallCircleAndAngles (pane, cir);
 				
 		// Create a scene and place it in the stage
@@ -48,6 +49,7 @@ public class Question3 extends Application {
 		primaryStage.show(); // Display the stage
 	}
 	
+	//Set three small red circles on top of each triangle points and label each point with its Angles
 	private void setSmallCircleAndAngles (Pane pane, Circle cir) {
 		for (int i = 0; i < 3; i++) {
 
@@ -68,6 +70,7 @@ public class Question3 extends Application {
 		}
 	}
 	
+	//Create a Central Circle
 	private Circle setCircle () {
 		Circle cir = new Circle();
 		cir.setCenterX(200);
@@ -79,6 +82,7 @@ public class Question3 extends Application {
 		return cir;
 	}
 	
+	//Create three random triangle points
 	private void setTrianglePoints (Circle cir) {
 		for (int i = 0; i < 3; i++) {
 			double random = ThreadLocalRandom.current().nextDouble(0, 2 * Math.PI);
@@ -90,6 +94,7 @@ public class Question3 extends Application {
 		}
 	}
 	
+	//Create the Triangle according to the points
 	private Polygon setTriangle () {
 		
 		Polygon tri = new Polygon();
@@ -103,6 +108,7 @@ public class Question3 extends Application {
 		return tri;
 	}
 	
+	//Calculate the initial Angles of the Triangle
 	private void setTriangleAngles () {
 		
 		double sideC = points[1].distance(points[0]);
@@ -117,6 +123,7 @@ public class Question3 extends Application {
 				.toDegrees(Math.acos((sideC * sideC - sideB * sideB - sideA * sideA) / (-2 * sideA * sideB)));
 	}
 	
+	//Update each angles when a point is move
 	private void updateAngles () {
 		
 		double sideC = points[1].distance(points[0]);
@@ -136,6 +143,7 @@ public class Question3 extends Application {
 		
 	}
 
+	//Make each points movable
 	private void makePointsMoveable(Circle point, Text text, ObservableList<Double> line, int index, Circle cir) {
 		point.setOnMouseDragged((MouseEvent me) -> {
 			

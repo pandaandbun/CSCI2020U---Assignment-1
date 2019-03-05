@@ -20,28 +20,28 @@ public class Question2 extends Application {
 		pane.setVgap(5);
 		pane.setPadding(new Insets(25,25,25,25)); 
 
-		//Investment Amount
+		//Create Investment Amount label and textfield
 		TextField investmentAmount  = new TextField();
 		investmentAmount.setAlignment(Pos.BASELINE_RIGHT);
 		investmentAmount.setPrefColumnCount(14);
 		pane.add(new Label("Investment Amount: "), 0, 1);
 		pane.add(investmentAmount, 1, 1);
 		
-		//Years
+		//Create Years label and textfield
 		TextField years = new TextField();
 		years.setAlignment(Pos.BASELINE_RIGHT);
 		years.setPrefColumnCount(14);
 		pane.add(new Label("Years: "), 0, 2);
 		pane.add(years, 1, 2);
 
-		//Annual Interest Rate
+		//Create Annual Interest Rate label and textfield
 		TextField annualInterestRate = new TextField();
 		annualInterestRate.setAlignment(Pos.BASELINE_RIGHT);
 		annualInterestRate.setPrefColumnCount(14);
 		pane.add(new Label("Annual Interest Rate: "), 0, 3);
 		pane.add(annualInterestRate, 1, 3);
 		
-		//Future Value
+		//Create Future Value label and textfield
 		TextField futureValue = new TextField();
 		futureValue.setAlignment(Pos.BASELINE_RIGHT);
 		futureValue.setPrefColumnCount(14);
@@ -49,10 +49,11 @@ public class Question2 extends Application {
 		pane.add(new Label("Future Value: "), 0, 4);
 		pane.add(futureValue, 1, 4);
 
-		//Calculate Button
+		//Create Calculate Button
 		Button calc_button = new Button("Calculate");
 		pane.add(calc_button, 1, 5);
 		
+		//Set action handler on button
 		calc_button.setOnAction(e -> {
 			DecimalFormat f = new DecimalFormat("##.00");
 			double result = Double.parseDouble(investmentAmount.getText()) * Math.pow((1 + 
