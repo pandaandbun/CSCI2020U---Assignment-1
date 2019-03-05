@@ -7,13 +7,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.control.Button;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
 import javafx.scene.layout.BorderPane;
 import javafx.geometry.Insets;
 import java.io.File;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Question4 extends Application {
