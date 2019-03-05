@@ -19,7 +19,6 @@ public class Question4 extends Application {
 	public void start(Stage primaryStage) {
 		HBox controlBox = new HBox(10);
 		BorderPane pane = new BorderPane();
-		Pane chart = new Pane();
 		
 		Histogram hist = new Histogram();
 		// Set text field
